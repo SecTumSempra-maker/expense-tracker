@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import AuthLayouts from "../../components/layouts/AuthLayouts";
 import { useNavigate } from "react-router-dom";
 import Input from "../../components/Inputs/Input";
-import { Link } from "react-router-dom";
-import { validateEmail } from "../../utils/helper";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,20 +9,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-
-    if (!validateEmail(email)) {
-      setError("Please Enter a valid email address.");
-      ``;
-      return;
-    }
-    if (!password) {
-      setError("PLease enter the password");
-      return;
-    }
-    setError("");
-  };
+  const handleLogin = async (e) => {};
 
   return (
     <AuthLayouts>

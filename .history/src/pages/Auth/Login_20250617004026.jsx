@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import AuthLayouts from "../../components/layouts/AuthLayouts";
 import { useNavigate } from "react-router-dom";
 import Input from "../../components/Inputs/Input";
-import { Link } from "react-router-dom";
-import { validateEmail } from "../../utils/helper";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,20 +9,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-
-    if (!validateEmail(email)) {
-      setError("Please Enter a valid email address.");
-      ``;
-      return;
-    }
-    if (!password) {
-      setError("PLease enter the password");
-      return;
-    }
-    setError("");
-  };
+  const handleLogin = async (e) => {};
 
   return (
     <AuthLayouts>
@@ -39,6 +24,7 @@ const Login = () => {
             onChange={({ target }) => setEmail(target.value)}
             label="Email Address"
             placeholder="siddharth@example.com"
+            git
             type="password"
           />
 
@@ -49,19 +35,6 @@ const Login = () => {
             placeholder="Min 8 character"
             type="password"
           />
-
-          {error && <p className="text-red-500 text-xs pd-2.5">{error}</p>}
-
-          <button type="submit" className="btn-primary">
-            LOGIN
-          </button>
-
-          <p className="text-[13px] text-slate-800 mt-3">
-            Dont have an account?{""}
-            <Link className="font-medium text-primary underline" to="/signup">
-              Signup
-            </Link>
-          </p>
         </form>
       </div>
     </AuthLayouts>

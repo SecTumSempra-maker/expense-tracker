@@ -3,7 +3,6 @@ import AuthLayouts from "../../components/layouts/AuthLayouts";
 import { useNavigate } from "react-router-dom";
 import Input from "../../components/Inputs/Input";
 import { Link } from "react-router-dom";
-import { validateEmail } from "../../utils/helper";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,7 +15,6 @@ const Login = () => {
 
     if (!validateEmail(email)) {
       setError("Please Enter a valid email address.");
-      ``;
       return;
     }
     if (!password) {
