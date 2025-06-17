@@ -35,7 +35,7 @@ const SignUp = () => {
       return;
     }
     setError("");
-    //handle signup api
+    //handle signup api call
   };
 
   return (
